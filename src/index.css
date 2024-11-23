@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-gray-100;
+  }
+}
+
+@layer utilities {
+  .glow-effect {
+    box-shadow: 0 0 25px theme('colors.indigo.500'),
+                0 0 50px theme('colors.purple.500');
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 25px theme('colors.indigo.500'),
+                  0 0 50px theme('colors.purple.500');
+    }
+    to {
+      box-shadow: 0 0 35px theme('colors.purple.500'),
+                  0 0 70px theme('colors.pink.500');
+    }
+  }
+}
+
+/* Custom Ant Design Table Styles */
+.custom-table {
+  @apply bg-gray-800;
+}
+
+.custom-table .ant-table {
+  @apply bg-transparent;
+}
+
+.custom-table .ant-table-thead > tr > th {
+  @apply bg-gray-700 text-gray-300 border-gray-600;
+}
+
+.custom-table .ant-table-tbody > tr > td {
+  @apply border-gray-700 text-gray-300;
+}
+
+.custom-table .ant-table-tbody > tr:hover > td {
+  @apply bg-gray-700;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
